@@ -1,0 +1,27 @@
+<ion-header class="shadowed">
+
+    <header-small></header-small>
+  
+  </ion-header>
+
+
+<ion-content padding>
+  <h1>Sus pedidos :</h1>
+  <p *ngIf="noOrders" >No tiene ningún pedido por el momento.</p>
+  <ion-list>
+    <ion-item *ngFor="let item of ordersDetail" >
+      <ion-grid>
+        <ion-row>
+          <ion-col col-8>
+            <h2>{{item.fName}} {{item.sName}}</h2>
+            <h5><ion-icon name="ios-basket-outline"></ion-icon> {{item.qtite}} paquete(s) reservado(s)</h5>
+          </ion-col>
+          <ion-col col-4 style="text-align : right">
+            <button class="panierRecup" *ngIf="item.isRecup" (click)="presentAlertOrder(item.id, item.isRecup)" >Paquete(s)<br>recogido</button>
+            <button class="panierNonRecup" *ngIf="!item.isRecup" (click)="presentAlertOrder(item.id, item.isRecup)" >Actualizar</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,103 @@
+page-panier {
+    text-align: center;
+
+    #btnDetail{
+        width : 94% !important;
+        margin-left : 3% !important;
+        margin-top : 5vh !important;
+    }
+
+    ion-card{
+        border-radius: 10px !important;
+        -webkit-box-shadow: 0px 6px 20px -5px rgba(0,0,0,0.2) !important;
+        -moz-box-shadow: 0px 6px 20px -5px rgba(0,0,0,0.2) !important;
+        box-shadow: 0px 6px 20px -5px rgba(0,0,0,0.2) !important;
+        margin-bottom : 3vh !important;
+        .picText{
+        text-align: center;
+        margin-top: -200px;
+        z-index:100;
+        position: absolute;
+        width: 85%;
+
+            button > span{
+                font-size : 1.3rem !important;
+            }
+        
+            h5, h1{
+                color: white;
+                padding-bottom: 30px;
+            }
+        }   
+        .imgWrap {
+            position:relative;
+
+            img{
+                height: 220px;
+                object-fit: cover;
+            }
+
+          }
+          
+          .imgWrap:before {
+            content:"";
+            position: absolute;
+            top:0;
+            left:0;
+            height:100%;
+            width:100%;
+            background: rgba(0,0,0,0.5);
+            z-index:99;
+          }
+    
+          ion-item{
+              padding-top : 20px !important;
+              padding-bottom : 20px !important;
+
+              ion-label{
+                  margin : 0px !important;
+              }
+          }
+
+          .contain{
+            padding-top: 10px;
+            position: relative;
+            width: 50%; /*Because you only have 3 elements (100 divided by 3)*/
+            float: left; /*To get them next to each other if all else fails*/
+            color : map-get($colors, listooPink);
+
+            h5{
+                font-size : 12px !important;
+                text-align: center;
+                color : map-get($colors, listooPink);
+            }
+
+            ion-icon{
+                -webkit-box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.15);
+                -moz-box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.15);
+                box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.15);
+                border-radius : 20px !important;
+                padding: 10px !important;
+                margin-bottom: 5px !important;
+                font-size : 18px;
+            }
+        }
+
+        .border{
+            border-right: solid 1px #bbbbbb;
+            color : map-get($colors, listooGreen) !important;
+            h5{
+                color : map-get($colors, listooGreen) !important;
+            }
+        }
+
+        div{
+            text-align: center;
+        }
+
+        button{
+            margin-bottom: 3vh !important;
+            margin-top : 3vh !important;
+        }
+    } 
+}

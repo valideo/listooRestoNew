@@ -1,0 +1,84 @@
+<ion-header>
+  <header-big></header-big>
+</ion-header>
+
+
+<ion-content padding>
+  <p>Antes de comenzar, cuéntenos sobre usted y su establecimiento:</p>
+  <ion-list>
+    <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <ion-item>
+                <ion-label stacked>Nombre :</ion-label>
+                <ion-input [(ngModel)]="fName" placeholder="Carlos" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <ion-item>
+                <ion-label stacked>Apellido :</ion-label>
+                <ion-input [(ngModel)]="sName" placeholder="Ruiz" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    <ion-item>
+        <ion-label stacked>Email :</ion-label>
+        <ion-input [(ngModel)]="email" placeholder="carlosruiz@gmail.com" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Contraseña:</ion-label>
+        <ion-input [(ngModel)]="password" placeholder="**********" type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Confirmar contraseña:</ion-label>
+      <ion-input [(ngModel)]="confPassword" placeholder="**********" type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Teléfono:</ion-label>
+        <ion-input [(ngModel)]="tel" placeholder="300 123 45 67" type="tel"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Nombre del establecimiento:</ion-label>
+        <ion-input [(ngModel)]="restoName" placeholder="El Chicharrón Crocante" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Tipo de establecimiento :</ion-label>
+      <ion-select [(ngModel)]="restoType" multiple="false" cancelText="Annuler"
+        okText="Valider">
+        <ion-option  value="burger">Hamburguesería</ion-option>
+        <ion-option  value="pizza">Pizza</ion-option>
+        <ion-option  value="pol">Pollo</ion-option>
+        <ion-option selected="true" value="col">Colombiana</ion-option>
+        <ion-option  value="bowl">Bowl</ion-option>
+        <ion-option  value="hot">Hot Dog</ion-option>
+        <ion-option  value="sushi">Sushi</ion-option>
+        <ion-option  value="des">Desayunos</ion-option>
+        <ion-option  value="asi">Asiática</ion-option>
+        <ion-option  value="mexi">Mexicana</ion-option>
+        <ion-option  value="ita">Italiana</ion-option>
+        <ion-option  value="ara">Árabe</ion-option>
+        <ion-option  value="chu">Chuzo</ion-option>
+        <ion-option  value="car">Carne</ion-option>
+        <ion-option  value="peru">Peruana</ion-option>
+        <ion-option  value="empa">Empanadas</ion-option>
+        <ion-option  value="mar">Del mar</ion-option>
+        <ion-option  value="sand">Sándwich</ion-option>
+        <ion-option  value="jug">Jugos</ion-option>
+        <ion-option  value="cafe">Cafès</ion-option>
+        <ion-option  value="post">Postres</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Dirección del establecimiento :</ion-label>
+        <ion-input [(ngModel)]="address" placeholder="Cra 7 # 91 - 72" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Ciudad :</ion-label>
+        <ion-input [(ngModel)]="city" placeholder="Bogota" type="text"></ion-input>
+    </ion-item>
+    </ion-list>
+
+  <button ion-button full (click)="clickRegister()">Crear cuenta</button>
+
+</ion-content>

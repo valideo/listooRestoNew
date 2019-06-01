@@ -1,0 +1,33 @@
+page-start-config {
+    
+    .fixed-content{
+        background-color : white;
+    }
+
+    ion-content{
+        color : black !important;
+    }
+
+    ion-icon{
+        font-size: 2.4rem !important;
+        font-weight: bold;
+        width: 2.4rem;
+        text-align: center;
+        background-color: map-get($colors, listooPink) !important;
+        color: white !important;
+        border-radius : 20px;
+    }
+
+    button{
+        position: absolute !important;
+        bottom: 2%;
+        width: 90% !important;
+        color : white !important;
+        background-color: map-get($colors, listooGreen) !important;
+    }
+
+    img{
+        padding-top: 20%;
+        padding-left: 20%;
+    }
+}

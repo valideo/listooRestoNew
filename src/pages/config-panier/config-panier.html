@@ -1,0 +1,130 @@
+<ion-header class="shadowed">
+  <ion-icon (click)="goBack()" *ngIf="type == 'detail'" name="ios-arrow-round-back"></ion-icon>
+  <header-small *ngIf="type == 'detail'"></header-small>
+</ion-header>
+
+<ion-content *ngIf="type != 'detail'">
+  <ion-slides pager>
+    <ion-slide id="firstSlide">
+      <ion-buttons class="btnClose" start>
+        <button ion-button ion-only (click)="dismiss()">
+          <ion-icon class="iconClose" name="close"></ion-icon>
+        </button>
+      </ion-buttons>   
+    <header-big></header-big>
+        <p>Gracias a usted tenemos la oportunidad de luchar contra el desperdicio de alimentos y la pobreza. 👍</p>
+        <h5>¿Cuantos paquetes deseas vender?  :</h5>
+        <ion-item>
+          <ion-input (ionChange)="valueChanged()" [(ngModel)]="qtite" type="number"></ion-input>
+        </ion-item>
+        <h5>Con un precio de venta de :</h5>
+        <ion-item>
+          <ion-select (ionChange)="valueChanged()" [(ngModel)]="prix" multiple="false" cancelText="Annuler"
+            okText="Valider">
+            <ion-option  value="10000">$ 10.000/paquete</ion-option>
+            <ion-option  value="15000">$ 15.000/paquete</ion-option>
+            <ion-option  value="22000">$ 22.000/paquete</ion-option>
+            <ion-option  value="30000">$ 30.000/paquete</ion-option>
+            <ion-option  value="40000">$ 40.000/paquete</ion-option>
+          </ion-select>
+        </ion-item>
+        <div id="resQtite">
+          <h3>Ganancia de :</h3>
+          <p class="whiteQtite">$ {{totalGain}}</p>
+          <p>por :</p>
+          <p class="pinkQtite">{{qtite}} paquetes</p>
+          <p>​¡ + 60% de visibilidad !</p>
+        </div>
+      <button *ngIf="!isClavierOpen" id="firstBtnSwipe" ion-button (click)="slideTo('1')">Siguiente</button>
+    </ion-slide>
+    <ion-slide id="secondSlide">
+      <ion-buttons class="btnClose" start>
+          <button ion-button ion-only (click)="dismiss()">
+            <ion-icon class="iconClose" name="close"></ion-icon>
+          </button>
+        </ion-buttons>   
+      <header-big></header-big>
+        <h5>Descripción del paquete :</h5>
+        <p id="maxChar">(Máximo 250 caracteres)</p>
+        <ion-item>
+          <ion-textarea maxlength="250" [(ngModel)]="desc"></ion-textarea>
+        </ion-item>
+        <h5>Horario de recogida:</h5>
+        <ion-item>
+          <ion-label>De</ion-label>
+          <ion-datetime (ionChange)="dateStartChanged()" minuteValues="0,30" displayFormat="hh:mm:a" [(ngModel)]="startHour"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hasta :</ion-label>
+          <ion-datetime disabled="{{isDisabled}}" (ionChange)="dateEndChanged()" minuteValues="0,30" displayFormat="hh:mm:a" [(ngModel)]="endHour"></ion-datetime>
+        </ion-item>
+      <button *ngIf="!isClavierOpen"  class="next" ion-button (click)="slideTo('2')">Siguiente</button>
+    </ion-slide>
+    <ion-slide id="thirdSlide">
+      <ion-buttons class="btnClose" start>
+          <button ion-button ion-only (click)="dismiss()">
+            <ion-icon class="iconClose" name="close"></ion-icon>
+          </button>
+        </ion-buttons>   
+      <header-big></header-big>
+      <div id="resume">
+        <h2>Resumen</h2>
+        <h5>Precio de venta de cada paquete:</h5>
+        <ion-item>
+          <ion-select (ionChange)="valueChanged()" disabled="true" [(ngModel)]="prix" multiple="false" cancelText="Annuler"
+            okText="Valider">
+            <ion-option  value="10000">$ 10.000</ion-option>
+            <ion-option  value="15000">$ 15.000</ion-option>
+            <ion-option  value="22000">$ 22.000</ion-option>
+            <ion-option  value="30000">$ 30.000</ion-option>
+            <ion-option  value="40000">$ 40.000</ion-option>
+          </ion-select>
+        </ion-item>
+            <h3>Ganancia de :</h3>
+            <p class="whiteQtite">$ {{totalGain}}</p>
+            <h3>por :</h3>
+            <p class="whiteQtite">{{qtite}} paquetes</p>
+        <h5>Horario de recogida:</h5>
+        <ion-item>
+          <ion-input disabled="true" [(ngModel)]="creneau"></ion-input>
+        </ion-item>
+      </div>
+      <button *ngIf="!isClavierOpen" class="next" ion-button (click)="savePanier()">Validar</button>
+    </ion-slide>
+  </ion-slides>
+
+  </ion-content>
+
+  <ion-content *ngIf="type == 'detail'" padding>
+            
+    <h5>Descripción del paquete :</h5>
+    <ion-item>
+      <ion-textarea disabled="true" [(ngModel)]="desc"></ion-textarea>
+    </ion-item>
+    <h5>Con un precio de venta de :</h5>
+        <ion-item>
+          <ion-select disabled="true" (ionChange)="valueChanged()" [(ngModel)]="prix" multiple="false" cancelText="Annuler"
+            okText="Valider">
+            <ion-option  value="10000">$ 10.000</ion-option>
+            <ion-option  value="15000">$ 15.000</ion-option>
+            <ion-option  value="22000">$ 22.000</ion-option>
+            <ion-option  value="30000">$ 30.000</ion-option>
+            <ion-option  value="40000">$ 40.000</ion-option>
+          </ion-select>
+        </ion-item>
+    <h5>Salvo de ir a la basura :</h5>
+    <ion-item>
+      <ion-input disabled="true" (ionChange)="valueChanged()" [(ngModel)]="qtite" type="number"></ion-input>
+    </ion-item>
+    <h5>Horario de recogida:</h5>
+    <ion-item>
+      <ion-label>De :</ion-label>
+      <ion-datetime disabled="true" (ionChange)="dateStartChanged()" minuteValues="0,30" displayFormat="hh:mm:a" [(ngModel)]="startHour"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hasta :</ion-label>
+      <ion-datetime disabled="true" (ionChange)="dateEndChanged()" minuteValues="0,30" min="{{minEnd}}" displayFormat="hh:mm:a" [(ngModel)]="endHour"></ion-datetime>
+    </ion-item>
+    <button ion-button (click)="editPanier()">Modificar</button>
+    
+    </ion-content>

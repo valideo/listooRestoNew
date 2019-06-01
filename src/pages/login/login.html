@@ -1,0 +1,20 @@
+<ion-header>
+  <header-big></header-big>
+</ion-header>
+
+
+<ion-content padding [style.background-position-y]="shouldHeight">
+
+    <p>Únete a nuestro equipo, como lo han hecho más de 100000 europeos</p>
+
+    <ion-item>
+        <ion-input [(ngModel)]="email" type="email" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input [(ngModel)]="password" type="password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+
+    <button ion-button full (click)="clickLogin()">Iniciar sesión</button>
+    <h6><a (click)="forgotPassClick()">¿Olvidó su contraseña?</a></h6>
+
+</ion-content>

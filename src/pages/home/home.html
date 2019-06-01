@@ -1,14 +1,11 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding *ngIf="!isLoggedIn" >
+  <header-big></header-big>
+  <p>Únete a nuestro equipo, como lo han hecho más de 100000 europeos</p>
+  <div class="divider"></div>
+  <button ion-button full (click)="goToRegister()">Crear cuenta</button>
+ <!--<button ion-button id="fbBtn" full>S'inscrire avec Facebook</button>--> 
+
+ <h6>¿Ya está registrado?​ <br><a (click)="goToLogin()">¡Inicie sesión!</a></h6>
+  <div class="divider"></div>
 </ion-content>

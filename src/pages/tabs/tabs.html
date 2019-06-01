@@ -1,0 +1,5 @@
+<ion-tabs [ngClass]="isBlured" *ngIf="!footerisHidden" #myTabs>
+  <ion-tab [root]="tab1Root" tabBadge="{{tabBadgePanier}}" tabTitle="Paquete" tabIcon="ios-basket-outline"></ion-tab>
+  <ion-tab [root]="tab2Root" tabBadge="{{tabBadgeOrders}}" tabTitle="Pedidos" tabIcon="md-cog"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Perfil" tabIcon="ios-contact-outline"></ion-tab>
+</ion-tabs>
