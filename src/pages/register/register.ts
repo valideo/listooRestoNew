@@ -28,7 +28,7 @@ export class RegisterPage {
       if(this.confPassword == this.password)
         this.register();
       else
-        this.apiProvider.presentAlertConnexion("Les mots de passes ne correspondent pas.");
+        this.apiProvider.presentAlertConnexion("Las constraseñas no corresponde.");
 
     }else{
       this.apiProvider.presentAlertConnexion("Complete todos los campos para validar su inscripción.");

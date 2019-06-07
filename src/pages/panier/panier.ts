@@ -44,7 +44,7 @@ export class PanierPage {
         var picName = data["piUrl"].substring(1, data["piUrl"].length-1);
         this.imgUrl = "http://api.listoo.co/uploads/"+ picName;
       }
-      if(this.checkDate(data["startHour"]) == false){
+      if(this.newCheckDate(data["startHour"]) == false){
         console.log("panier à mettre à jour");
         this.showStartConfig("edit");
       }else{
@@ -164,6 +164,26 @@ export class PanierPage {
         console.log("Date panier < Date Now && Date Now > 5h");
         return false;
       }
+    }
+  }
+
+  newCheckDate(datePanierString : string){
+
+    var datePanier = new Date(datePanierString);
+
+    datePanier.setHours(23);
+    datePanier.setMinutes(59);
+
+    var todayDate = new Date();
+
+    console.log(datePanier);
+    console.log(todayDate);
+
+    if(todayDate > datePanier){
+      return false
+    }
+    else{
+      return true
     }
   }
 
