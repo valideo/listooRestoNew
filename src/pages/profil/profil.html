@@ -40,8 +40,8 @@
       </ion-item>
       <ion-item>
         <ion-label stacked>Tipo de establecimiento :</ion-label>
-        <ion-select disabled="{{isDisabled}}" [(ngModel)]="restoType" multiple="false" cancelText="Annuler"
-          okText="Valider">
+        <ion-select interface="popover" disabled="{{isDisabled}}" [(ngModel)]="restoType" multiple="false" cancelText="Cancelar"
+          okText="Confirmar">
           <ion-option  value="burger">Hamburguesería</ion-option>
           <ion-option  value="pizza">Pizza</ion-option>
           <ion-option  value="pol">Pollo</ion-option>
